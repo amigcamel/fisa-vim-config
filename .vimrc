@@ -70,7 +70,9 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'jeetsukumaran/vim-indentwise'
 " Python mode (indentation, doc, refactor, lints, code checking, motion and
 " operators, highlighting, run and ipdb breakpoints)
-Plug 'klen/python-mode'
+" Plug 'klen/python-mode'
+" jedi-vim - awesome Python autocompletion with VIM
+Plug 'davidhalter/jedi-vim'
 " Better autocompletion
 Plug 'Shougo/neocomplcache.vim'
 " Snippets manager (SnipMate), dependencies, and snippets repo
@@ -112,7 +114,7 @@ Plug 'matchit.zip'
 " Gvim colorscheme
 Plug 'Wombat'
 " Yank history navigation
-Plug 'YankRing.vim'
+" Plug 'YankRing.vim'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -225,7 +227,7 @@ set undofile                      " persistent undos - undo after you re-open th
 set undodir=~/.vim/dirs/undos
 set viminfo+=n~/.vim/dirs/viminfo
 " store yankring history file there too
-let g:yankring_history_dir = '~/.vim/dirs/'
+" let g:yankring_history_dir = '~/.vim/dirs/'
 
 " create needed directories if they don't exist
 if !isdirectory(&backupdir)
@@ -313,6 +315,9 @@ let g:syntastic_enable_signs = 0
 "let g:syntastic_warning_symbol = '⚠'
 "let g:syntastic_style_error_symbol = '✗'
 "let g:syntastic_style_warning_symbol = '⚠'
+
+" check python syntax on the fly
+let g:syntastic_python_checkers = ['flake8']
 
 " Python-mode ------------------------------
 
@@ -413,3 +418,15 @@ let g:airline#extensions#whitespace#enabled = 0
 "let g:airline_symbols.branch = '⭠'
 "let g:airline_symbols.readonly = '⭤'
 "let g:airline_symbols.linenr = '⭡'
+
+" using mouse for vim
+if has('mouse')
+    set mouse=a
+endif
+
+" CtrlP shortcuts
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" paste in insert mode
+set paste
