@@ -427,6 +427,3 @@ endif
 " CtrlP shortcuts
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-
-" paste in insert mode
-set paste
